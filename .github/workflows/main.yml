@@ -34,9 +34,9 @@ jobs:
       run: |
         echo ${{ github.ref }}
         git add .
-        git config --local user.email "muarachmann@gmail.com"
-        git config --local user.name "Mua N. Laurent"
-        git commit -m "scrapper: Automated build push" -a | exit 0
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "scrapper: Updated data.json file" -a | exit 0
     
     - name: Push changes
       if: github.ref == 'refs/heads/master'
