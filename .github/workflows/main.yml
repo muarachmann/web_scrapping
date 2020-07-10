@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -34,8 +34,8 @@ jobs:
       run: |
         echo ${{ github.ref }}
         git add .
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "muarachmann@gmail.com"
+        git config --local user.name "Mua Rachmann"
         git commit -m "scrapper: Updated data.json file" -a | exit 0
     
     - name: Push changes
