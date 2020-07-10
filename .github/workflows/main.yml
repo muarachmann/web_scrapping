@@ -1,7 +1,7 @@
 name: Scrapper runs every 5 minutes
 on:
   schedule:
-    - cron: "*/2 * * * *"
+    - cron: "*/5 * * * *"
     
 jobs:
   build:
