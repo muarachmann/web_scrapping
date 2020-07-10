@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import json
 from datetime import datetime
 
 # declare variables
@@ -29,12 +30,16 @@ def main():
         formatted_date = format_date(row[0])
         if formatted_date[0] in months and formatted_date[0] == datetime.now().strftime("%B"):
             results.append(row[0] + " - " + row[1])
-    
+     
     if len(results) < 0:
         print("No timeline available at this time")
     else:
         for result in results:
             print(result + "\n")
+            
+    # dumps results in a json file for bots to read
+    with open('data.json', 'w', encoding='utf-8') as f:
+        json.dump({ 'data' : results }, f, ensure_ascii = False, indent = 4)
 
 if __name__ == '__main__':
     main()
